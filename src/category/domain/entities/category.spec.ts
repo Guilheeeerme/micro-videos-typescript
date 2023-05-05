@@ -3,9 +3,14 @@ import { Category, CategoryProperties } from "./category";
 import { omit } from "lodash";
 
 describe("Category Unit Tests", () => {
+  beforeEach(() => {
+    Category.validate = jest.fn();
+  });
+
   test("Constructor of category", () => {
     let category = new Category({ name: "Movie" });
     let props = omit(category.props, "created_at");
+    expect(Category.validate).toHaveBeenCalled();
     expect(props).toStrictEqual({
       name: "Movie",
       description: null,
@@ -154,6 +159,7 @@ describe("Category Unit Tests", () => {
 
     category.update("Other movie", "Other description");
 
+    expect(Category.validate).toHaveBeenCalledTimes(2);
     expect(category.name).toBe("Other movie");
     expect(category.description).toBe("Other description");
   });
