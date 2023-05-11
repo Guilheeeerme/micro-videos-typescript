@@ -6,3 +6,4 @@ node_modules/
 tsconfig.tsbuildinfo
 docker-compose.override.yaml
 annotations.md
+src/coverage
