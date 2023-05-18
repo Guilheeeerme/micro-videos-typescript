@@ -1,4 +1,4 @@
-import { EntityValidationError } from "@seedwork/domain/errors/validation-error";
+import { EntityValidationError } from "../../../@seedwork/domain/errors/validation-error";
 import Entity from "../../../@seedwork/domain/entity/entity";
 import UniqueEntityId from "../../../@seedwork/domain/value-objects/unique-entity-id.vo";
 import CategoryValidatorFactory from "../validators/category.validator";
@@ -9,6 +9,8 @@ export type CategoryProperties = {
   is_active?: boolean;
   created_at?: Date;
 };
+
+export class CategoryId extends UniqueEntityId {}
 
 export class Category extends Entity<CategoryProperties> {
   constructor(public readonly props: CategoryProperties, id?: UniqueEntityId) {
