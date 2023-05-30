@@ -25,3 +25,5 @@ export abstract class ValueObject<Value = any> {
       : valueStr;
   };
 }
+
+export default ValueObject;

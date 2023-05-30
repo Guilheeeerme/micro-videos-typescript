@@ -7,30 +7,6 @@ export default class CategoryInMemoryRepository
   extends InMemorySearchableRepository<Category, any>
   implements CategoryRepository.Repository
 {
-  search(
-    props: CategoryRepository.SearchParams
-  ): Promise<CategoryRepository.SearchResult> {
-    throw new Error("Method not implemented.");
-  }
-  insert(entity: Category): Promise<void> {
-    throw new Error("Method not implemented.");
-  }
-  bulkInsert(entities: Category[]): Promise<void> {
-    throw new Error("Method not implemented.");
-  }
-  findById(id: string | CategoryId): Promise<Category> {
-    throw new Error("Method not implemented.");
-  }
-  findAll(): Promise<Category[]> {
-    throw new Error("Method not implemented.");
-  }
-  update(entity: Category): Promise<void> {
-    throw new Error("Method not implemented.");
-  }
-  delete(id: string | CategoryId): Promise<void> {
-    throw new Error("Method not implemented.");
-  }
-
   sortableFields: string[] = ["name", "created_at"];
 
   protected async applyFilter(
