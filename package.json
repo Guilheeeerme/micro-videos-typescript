@@ -1,35 +1,26 @@
 {
-  "name": "micro-videos",
-  "version": "1.0.0",
-  "description": "admin do catálogo de vídeos",
+  "name": "micro-videos-typescript",
+  "version": "0.0.1",
+  "description": "",
   "main": "index.js",
+  "workspaces": [
+    "./src/@core",
+    "./src/nestjs"
+  ],
   "scripts": {
-    "ts-node": "ts-node",
-    "tsc": "tsc",
-    "tsc:check": "npm run tsc -- --noEmit",
-    "clean:tsc": "rm tsconfig.tsbuildinfo",
-    "test": "jest",
-    "test:cov": "npm run jest -- --c"
+    "prestart:dev": "npm run build -w @fc/micro-videos",
+    "start:dev": "npm run build -w @fc/micro-videos & npm run start:dev -w nestjs",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Guilheeeerme/micro-videos-typescript.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@swc/core": "^1.2.172",
-    "@swc/jest": "^0.2.20",
-    "@types/jest": "^27.4.0",
-    "@types/lodash": "^4.14.194",
-    "@types/node": "^14.14.31",
-    "@types/uuid": "^9.0.1",
-    "jest": "27.5.1",
-    "regenerator-runtime": "^0.13.9",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.0.4"
+  "bugs": {
+    "url": "https://github.com/Guilheeeerme/micro-videos-typescript/issues"
   },
-  "dependencies": {
-    "class-validator": "^0.13.2",
-    "expect": "^27.5.1",
-    "lodash": "^4.17.21",
-    "uuid": "^9.0.0"
-  }
+  "homepage": "https://github.com/Guilheeeerme/micro-videos-typescript#readme"
 }
